@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="main-picture container-fluid"></div>
+
+<div class="store-categories">
+    <div>
+        <a href=""><h1 class="category-title">Store</h1></a>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <a asp-controller="Store" asp-action="Fish">
+                    <img class="img-responsive" src="~/images/clownfish.jpg">
+                    <div class="caption">
+                    <h2>Fish</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">     
+            <div class="thumbnail">
+                <a asp-controller="Store" asp-action="Reptiles">
+                    <img class="img-responsive" src="~/images/eastern_bearded_dragon.jpg">
+                    <div class="caption">
+                        <h2>Reptiles</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">       
+            <div class="thumbnail">
+                <a asp-controller="Store" asp-action="Mammals">
+                    <img class="img-responsive" src="~/images/hedgehog.jpg">
+                    <div class="caption">
+                        <h2>Mammals</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="new-arrivals">
+    <div>
+        <h1 class="category-title">New Arrivals!</h1>
+    </div>
+    <div class="row">
+
+        @{ 
+            foreach (Animal animal in Model)
+            {
+                 @Html.Partial("_card", animal)
+            }
+        }
+      
+    </div>
+</div>
+

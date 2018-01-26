@@ -1,0 +1,33 @@
+﻿@model Animal
+
+<div id="individual-animal">
+    <h3 class="category-title animal-title">@Model.Name</h3>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-5">
+            <img class="img-responsive animal-image" src="@Model.ImageUrl" />
+            <div class="pricing"><span>Price:</span><span class="amount">@Model.Price.ToString("c")</span></div>
+        </div>
+        <div class="col-md-offset-1 col-md-5 animal-properties">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>Category</th>
+                    <th>Description</th>
+                </tr>
+
+                @foreach (var property in ViewData.ModelMetadata.Properties)
+                {
+                    if (property.PropertyName != "ImageUrl" && property.PropertyName != "AnimalId" && property.PropertyName != "Price" && property.PropertyName != "DateAdded" && property.PropertyName != "Name")
+                    {
+                        <tr>
+                            <td class="category-data">@(property.DisplayName ?? property.PropertyName)</td>
+                            <td class="description-data">
+                                @Model.GetType().GetProperty(property.PropertyName).GetValue(@Model, null)
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+            <a class="btn btn-default card-btn" asp-controller="Cart" asp-action="AddToShoppingCart" asp-route-animalId="@Model.AnimalId">Add to Cart <i class="material-icons">add_shopping_cart</i></a>
+        </div>
+    </div>
+</div>

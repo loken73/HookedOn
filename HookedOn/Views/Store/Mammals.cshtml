@@ -1,0 +1,14 @@
+﻿
+<div id="main-store" class="store-section">
+    <h1 class="category-title">Mammals</h1>
+    <div class="row card-row">
+
+        @{
+            foreach (Animal animal in Model)
+            {
+                @Html.Partial("_card", animal);
+            }
+        }
+
+    </div>
+</div>

@@ -1,0 +1,12 @@
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\bin\Debug\netcoreapp2.0\HookedOn.deps.json
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\bin\Debug\netcoreapp2.0\HookedOn.runtimeconfig.json
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\bin\Debug\netcoreapp2.0\HookedOn.runtimeconfig.dev.json
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\bin\Debug\netcoreapp2.0\HookedOn.dll
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\bin\Debug\netcoreapp2.0\HookedOn.pdb
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\obj\Debug\netcoreapp2.0\HookedOn.csprojResolveAssemblyReference.cache
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\obj\Debug\netcoreapp2.0\HookedOn.csproj.CoreCompileInputs.cache
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\obj\Debug\netcoreapp2.0\HookedOn.AssemblyInfoInputs.cache
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\obj\Debug\netcoreapp2.0\HookedOn.AssemblyInfo.cs
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\obj\Debug\netcoreapp2.0\HookedOn.dll
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\obj\Debug\netcoreapp2.0\HookedOn.pdb
+C:\Users\f29pl\OneDrive\Documents\Visual Studio 2017\Projects\HookedOn\HookedOn\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

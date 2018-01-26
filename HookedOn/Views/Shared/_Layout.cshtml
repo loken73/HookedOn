@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HookedOn</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="https://use.fontawesome.com/1fefac1ce3.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="https://use.fontawesome.com/1fefac1ce3.js"></script>
+    </environment>
+</head>
+<body>
+    <div class="body-wrapper">
+        <div id="sidebar-wrapper">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="sidenav-anchor"><img class="container" src="~/images/logo_blue_whiteletters.png"/></a>
+            <ul class="sidebar-nav nav">
+                <li class="first-sidenav-li"><a asp-area="" asp-controller="Home" asp-action="Index" class="sidenav-anchor">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About" class="sidenav-anchor">About</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact" class="sidenav-anchor">Contact</a></li>
+            </ul>
+        </div>
+        <div class="container-fluid body-content main-body">
+            <div class="collapsible-header">
+                <div class="hamburger">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <ul class="main-header-list">
+                    <li>@await Component.InvokeAsync("ShoppingCartSummary")</li>
+                    <li>@await Html.PartialAsync("_LoginPartial")</li>
+                </ul>
+            </div>
+            <div class="body-main-content container-fluid">
+                @RenderBody()
+            </div>
+            <footer id="body-footer">
+                <div class="row">
+                    <div class="col-lg-3 mission-statement">
+                        <p class="mission-title">Our Mission</p>
+                        <p class="mission-body">
+                            We here at Hooked on Fish and Corals, believe that through expert knowledge and impeccable service we can help customers obtain and care
+                            for any new addition to their family.
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 store-links">
+                        <p>Store</p>
+                        <ul>
+                            <li><a asp-area="" asp-controller="Home" asp-action="About">Fish</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Reptiles</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="About">Mammals</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 connect-social">
+                        <p>Connect with Us</p>
+                        <ul>
+                            <li><a href="https://www.google.com/search?q=hooked+on+fish+and+corals&oq=hooked+on+fish+and+coral&aqs=chrome.0.69i59j69i57j69i60l3j0.4105j0j4&sourceid=chrome&ie=UTF-8#lrd=0x88d9bb30f503e4f3:0xcaa92c57523c844,1,,,"><span><i class="fa fa-google" aria-hidden="true"></i></span><span class="social-label">Google</span></a></li>
+                            <li><a href="https://www.facebook.com/Hooked-on-fish-corals-1683130295288953"><span><i class="fa fa-facebook" aria-hidden="true"></i></span><span class="social-label">Facebook</span></a></li>
+                            <li><a href="https://www.instagram.com/hooked_on_fish_and_corals/"><span><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="social-label">Instagram</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 customer-feedback">
+                        <p>Customer Feedback</p>
+                        <input class="form-control" type="text" placeholder="Name"/>
+                        <textarea  class="form-control" rows="4" placeholder="Your experience with us."></textarea>
+                    </div>
+                </div>
+                <div class="copywrite"><p>&copy; 2017 - HookedOn</p></div>
+            </footer>
+        </div>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

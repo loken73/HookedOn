@@ -1,0 +1,61 @@
+﻿@model Purchase
+
+<div id="admin-body">
+    <div id="order-detailed">
+        <h1>@ViewBag.CheckoutCompleteMessage</h1>
+
+        <h3>Please find details about your order below.</h3>
+
+        <div>
+
+            <h2>Your order #@Model.PurchaseId is shipping to: </h2>
+
+            @{ 
+    
+                <div>
+                    <ul>
+                        <li>@(Model.FirstName + " " + Model.LastName)</li>
+                        <li>@Model.AddressLine</li>
+                        <li>@(Model.City + ", " + Model.State + " " + Model.ZipCode)</li>
+                        <li>@Model.PhoneNumber</li>
+                        <li>@Model.Email</li>
+                    </ul>
+                </div>
+
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Selected amount</th>
+                            <th>Animal</th>
+                            <th class="text-right">Price</th>
+                            <th class="text-right">Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var line in Model.PurchaseLineItems)
+                        {
+                            <tr>
+                                <td class="text-center">@line.Amount</td>
+                                <td class="text-left">@line.Animal.Name</td>
+                                <td class="text-right">@line.Animal.Price.ToString("c")</td>
+                                <td class="text-right">
+                                    @((line.Amount * line.Animal.Price).ToString("c"))
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-right">Total:</td>
+                            <td class="text-right">
+                                @Model.PurchaseTotal.ToString("c")
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            }
+        </div>
+    </div>
+</div>
