@@ -12,14 +12,14 @@ namespace HookedOn.Interfaces
 
         Animal GetAnimalById(int animalId);
 
-        IEnumerable<Animal> GetNewestAnimals { get; }
+        IEnumerable<AnimalCardDTO> GetNewestAnimals { get; }
 
-        IEnumerable<Animal> GetReptiles { get; }
+        IEnumerable<AnimalCardDTO> GetReptiles { get; }
 
-        IEnumerable<Animal> GetMammals { get; }
+        IEnumerable<AnimalCardDTO> GetMammals { get; }
 
-        IEnumerable<Animal> GetFish { get; }
+        IEnumerable<AnimalCardDTO> GetFish { get; }
 
-        IEnumerable<Animal> GetAllAnimals { get; }
+        IEnumerable<AnimalCardDTO> GetAllAnimals { get; }
     }
 }

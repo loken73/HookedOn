@@ -50,7 +50,7 @@
     <div class="row">
 
         @{ 
-            foreach (Animal animal in Model)
+            foreach (AnimalCardDTO animal in Model)
             {
                  @Html.Partial("_card", animal)
             }

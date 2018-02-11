@@ -17,15 +17,68 @@ namespace HookedOn.Repositories
            _AppDbContext = appDbContext;
         }
 
-        public IEnumerable<Animal> GetNewestAnimals => _AppDbContext.Animals.OrderByDescending(a => a.DateAdded).Take(4);
+        public IEnumerable<AnimalCardDTO> GetNewestAnimals => _AppDbContext.Animals
+                                                        .OrderByDescending(a => a.DateAdded)
+                                                        .Select(a => new AnimalCardDTO()
+                                                        {
+                                                            AnimalId = a.AnimalId,
+                                                            Name = a.Name,
+                                                            ImageUrl = a.ImageUrl,
+                                                            CareLevel = a.CareLevel,
+                                                            Price = a.Price,
+                                                            Temperament = a.Temperament
+                                                        }).Take(4).ToList();
 
-        public IEnumerable<Animal> GetReptiles => _AppDbContext.Animals.OfType<Reptile>().OrderByDescending(a => a.Name);
+        public IEnumerable<AnimalCardDTO> GetReptiles => _AppDbContext.Animals
+                                                        .OfType<Reptile>()
+                                                        .OrderByDescending(a => a.Name)
+                                                        .Select(a => new AnimalCardDTO()
+                                                        {
+                                                            AnimalId = a.AnimalId,
+                                                            Name = a.Name,
+                                                            ImageUrl = a.ImageUrl,
+                                                            CareLevel = a.CareLevel,
+                                                            Price = a.Price,
+                                                            Temperament = a.Temperament
+                                                        }).ToList();
 
-        public IEnumerable<Animal> GetMammals => _AppDbContext.Animals.OfType<Mammal>().OrderByDescending(a => a.Name);
+        public IEnumerable<AnimalCardDTO> GetMammals => _AppDbContext.Animals
+                                                        .OfType<Mammal>()
+                                                        .OrderByDescending(a => a.Name)
+                                                        .Select(a => new AnimalCardDTO()
+                                                        {
+                                                            AnimalId = a.AnimalId,
+                                                            Name = a.Name,
+                                                            ImageUrl = a.ImageUrl,
+                                                            CareLevel = a.CareLevel,
+                                                            Price = a.Price,
+                                                            Temperament = a.Temperament
+                                                        }).ToList();
 
-        public IEnumerable<Animal> GetFish => _AppDbContext.Animals.OfType<Fish>().OrderByDescending(a => a.Name);
+        public IEnumerable<AnimalCardDTO> GetFish => _AppDbContext.Animals
+                                                    .OfType<Fish>()
+                                                    .OrderByDescending(a => a.Name)
+                                                    .Select(a => new AnimalCardDTO()
+                                                    {
+                                                        AnimalId = a.AnimalId,
+                                                        Name = a.Name,
+                                                        ImageUrl = a.ImageUrl,
+                                                        CareLevel = a.CareLevel,
+                                                        Price = a.Price,
+                                                        Temperament = a.Temperament
+                                                    }).ToList();
 
-        public IEnumerable<Animal> GetAllAnimals => _AppDbContext.Animals.OrderByDescending(a => a.Name);
+        public IEnumerable<AnimalCardDTO> GetAllAnimals => _AppDbContext.Animals
+                                                            .OrderByDescending(a => a.Name)
+                                                            .Select(a => new AnimalCardDTO()
+                                                            {
+                                                                AnimalId = a.AnimalId,
+                                                                Name = a.Name,
+                                                                ImageUrl = a.ImageUrl,
+                                                                CareLevel = a.CareLevel,
+                                                                Price = a.Price,
+                                                                Temperament = a.Temperament
+                                                            }).ToList();
 
         public Animal GetAnimalByName(string animalName)
         {
